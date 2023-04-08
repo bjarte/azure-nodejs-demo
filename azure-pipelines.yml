@@ -23,7 +23,7 @@ steps:
     customCommand: 'run build'
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish build artificat'
+  displayName: 'Publish build artifact'
   inputs:
     PathtoPublish: 'build'
     ArtifactName: 'drop'
