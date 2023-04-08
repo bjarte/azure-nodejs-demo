@@ -12,15 +12,18 @@ pool:
 steps:
 
 - task: Npm@1
+  displayName: 'npm install'
   inputs:
     command: 'install'
 
 - task: Npm@1
+  displayName: 'npm run build'
   inputs:
     command: 'custom'
     customCommand: 'run build'
 
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish build artificat'
   inputs:
     PathtoPublish: 'build'
     ArtifactName: 'drop'
