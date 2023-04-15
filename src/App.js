@@ -2,8 +2,6 @@
 import { useState } from 'react';
 import './App.css';
 
-
-
 function Square({ value, onSquareClick }) {
   return (<button className="square" onClick={(onSquareClick)}>
     {value}
@@ -42,7 +40,7 @@ function Board({ xIsNext, squares, onPlay }) {
   return (
     <>
 
-      <div className="status">{status}</div>
+      <h4 className="status">{status}</h4>
 
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
@@ -110,8 +108,14 @@ export default function Game() {
     }
 
     if (index === currentMove) {
+      if (index > 0) {
+        return (
+          <li key={index}>You are at move {index}</li>
+        );
+      }
+
       return (
-        <li key={index}>You are at move {index}</li>
+        <li key={index}>You are at the beginning of the game</li>
       );
     }
 
@@ -126,9 +130,12 @@ export default function Game() {
   return (
     <div className="game">
       <div className="game-board">
+
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+
       </div>
       <div className="game-info">
+        <h4>Game History</h4>
         <ul>{moves}</ul>
       </div>
     </div>
