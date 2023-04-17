@@ -102,7 +102,7 @@ export default function Game() {
     let description;
 
     if (index > 0) {
-      description = 'Go to move #' + index;
+      description = 'Go to move ' + index;
     } else {
       description = 'Go to game start';
     }
@@ -115,7 +115,7 @@ export default function Game() {
       }
 
       return (
-        <li key={index}>You are at the beginning of the game</li>
+        <li key={index}>You are at the start of the game</li>
       );
     }
 
